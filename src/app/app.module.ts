@@ -12,6 +12,8 @@ import {MatCardModule} from "@angular/material/card";
 import {MatDividerModule} from "@angular/material/divider";
 import {MatTableModule} from "@angular/material/table";
 import {MatButtonModule} from "@angular/material/button";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatIconModule} from "@angular/material/icon";
 
 
 
@@ -25,7 +27,7 @@ import {MatButtonModule} from "@angular/material/button";
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule, MatFormFieldModule, MatInputModule, MatCardModule, MatDividerModule, MatTableModule, MatButtonModule
+    FormsModule, MatFormFieldModule, MatInputModule, MatCardModule, MatDividerModule, MatTableModule, MatButtonModule, MatToolbarModule, MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
