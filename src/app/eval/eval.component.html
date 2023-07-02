@@ -1,0 +1,120 @@
+
+<mat-card>
+  <mat-card-header>
+    <h1>
+      Infix to Prefix|Postfix converter
+    </h1>
+  </mat-card-header>
+
+  <mat-divider></mat-divider>
+
+  <h2>
+    Enter Infix expression below
+  </h2>
+
+
+  <form class="infix-form">
+    <mat-form-field class="full-width">
+      <mat-label>Infix</mat-label>
+      <input
+        matInput
+        type="text"
+        #box
+        (keyup)="postfixCalculate(box.value)"
+        (keyup)="prefixCalculate(box.value)"
+        placeholder="Enter infix"
+        name="input"
+      >
+    </mat-form-field>
+  </form>
+
+  <mat-card-content>
+    <div *ngIf="isValid">
+      <h2>
+        postfix: {{postfix}}
+      </h2>
+
+      <h2>
+        prefix: {{prefix}}
+      </h2>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+
+
+
+<mat-card>
+
+  <button mat-raised-button color="primary" (click)="toggleView()">Toggle steps</button>
+
+  <table mat-table *ngIf="isPostfix" [dataSource]="postSteps" class="mat-elevation-z8">
+
+    <!-- No. Column -->
+    <ng-container matColumnDef="no">
+      <th mat-header-cell *matHeaderCellDef>No.</th>
+      <td mat-cell *matCellDef="let step">{{step.no}}</td>
+    </ng-container>
+
+    <!-- Char Column -->
+    <ng-container matColumnDef="char">
+      <th mat-header-cell *matHeaderCellDef>Expression</th>
+      <td mat-cell *matCellDef="let step">{{step.char}}</td>
+    </ng-container>
+
+    <!-- Stack Column -->
+    <ng-container matColumnDef="stack">
+      <th mat-header-cell *matHeaderCellDef>Stack</th>
+      <td mat-cell *matCellDef="let step">{{step.stack}}</td>
+    </ng-container>
+
+    <!-- Out Column -->
+    <ng-container matColumnDef="out">
+      <th mat-header-cell *matHeaderCellDef>Postfix</th>
+      <td mat-cell *matCellDef="let step">{{step.out}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+
+
+  <table mat-table *ngIf="!isPostfix" [dataSource]="prefSteps" class="mat-elevation-z8">
+
+    <!-- No. Column -->
+    <ng-container matColumnDef="no">
+      <th mat-header-cell *matHeaderCellDef>No.</th>
+      <td mat-cell *matCellDef="let step">{{step.no}}</td>
+    </ng-container>
+
+    <!-- Char Column -->
+    <ng-container matColumnDef="char">
+      <th mat-header-cell *matHeaderCellDef>Expression</th>
+      <td mat-cell *matCellDef="let step">{{step.char}}</td>
+    </ng-container>
+
+    <!-- Stack Column -->
+    <ng-container matColumnDef="stack">
+      <th mat-header-cell *matHeaderCellDef>Stack</th>
+      <td mat-cell *matCellDef="let step">{{step.stack}}</td>
+    </ng-container>
+
+    <!-- Out Column -->
+    <ng-container matColumnDef="out">
+      <th mat-header-cell *matHeaderCellDef>Prefix</th>
+      <td mat-cell *matCellDef="let step">{{step.out}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+
+</mat-card>
+
+
+
+
+
+

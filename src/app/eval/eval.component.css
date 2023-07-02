@@ -1,0 +1,47 @@
+h1 {
+  font-size: xxx-large;
+}
+
+h2 {
+  font-weight: normal;
+  font-size: x-large;
+  margin-top: 10px;
+}
+
+mat-card-header {
+  margin: 10px;
+}
+
+mat-card {
+  padding: 10px;
+  margin: 50px;
+  align-items: center;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+mat-card-content {
+  margin-bottom: 10px;
+}
+
+button {
+  margin: 20px;
+}
+
+.infix-form {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+}
+
+mat-divider {
+  width: 80%;
+}
+
+ng-container {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+
