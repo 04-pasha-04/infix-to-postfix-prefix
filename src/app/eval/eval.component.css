@@ -1,12 +1,14 @@
 h1 {
-  font-size: xxx-large;
+  font-size: 2vw;
 }
 
 h2 {
   font-weight: normal;
-  font-size: x-large;
+  font-size: 1vw;
   margin-top: 10px;
 }
+
+
 
 mat-card-header {
   margin: 10px;
